@@ -3,16 +3,12 @@
 #include "config.h"
 #include <stdio.h>
 
-// Define maximum and minimum PWM frequency of the motor
-#define PWM_FREQ_MAX 10000
-#define PWM_FREQ_MIN 1500
-
 // Define the step of the motor 
 #define Step 1.8
 
 // Define pins connect to the motor driver
 #define DIR RD0
-#define STEP RC2
+#define STEP RD2
 #define EN RD1
 
 // Define command to control the position of the stepper motor
@@ -29,9 +25,9 @@
 
 // Declare global variables
 char rcvStr[17];
-volatile uint8_t mode = 0;
-volatile uint8_t command;
-volatile uint16_t motor_freq = 2000;
+volatile uint8_t command = 0;
+volatile uint8_t speedmode = 0;
+uint8_t mode = 0;
 
 // Function to configure external and portB interrupt
 void ExtInt_Init(){
@@ -43,44 +39,106 @@ void ExtInt_Init(){
     GIE = 1;
 }
 
-// Function to configure PWM mode for CCP1
-void PWM_Init(void){
-    // Configure RC2 as output pin
-    TRISC2 = 0;
-    // Configure PWM mode in CCPCON
-    CCP1M3 = 1;
-    CCP1M2 = 1;
-}
-
-// Function to configure Timer2 
-void Speed_Control(uint16_t PWM_FREQ, uint8_t State){
-    uint16_t dutyCycle;
-    if(PWM_FREQ > PWM_FREQ_MAX || PWM_FREQ < PWM_FREQ_MIN)
+// Function to control the position of the motor
+void Position_Control(uint8_t com)
+{
+    float degree = 0;
+    // Get the degree of each command
+    if(com == Angle30)
     {
-        UART_sendString("ERROR: invalid frequency!");
+        degree = 30;
+    }else if(com == Angle45)
+    {
+        degree = 45;
+    }else if(com == Angle90)
+    {
+        degree = 90;
+    }else if(com == Angle180)
+    {
+        degree = 180;
+    }else if(com == Angle270)
+    {
+        degree = 270;
+    }else if(com == Angle360)
+    {
+        degree = 360;
+    }else{
+        UART_sendString("Invalid command\r\n");
         return;
     }
-    uint16_t PWM_RANGE = (_XTAL_FREQ/(16*PWM_FREQ)) & 0xFFFF;
-    PR2 = ((PWM_RANGE/4) - 1) & 0xFF;
-    // Use pre-scaler 1:16
-    T2CKPS1 = 1;
-    T2CKPS0 = 1;
-    // Control the speed of the motor
-    if(State == 0)
+    // Get the number of step required to move to the desired position
+    uint16_t step = (degree * 1.0)/Step;
+    // Generate pulse
+    for(uint16_t i = 0; i < step; ++i)
     {
-        dutyCycle = 0;
+        STEP = 1;
+        __delay_us(500);
+        STEP = 0;
+        __delay_us(500);
     }
-    else if(State == 1)
+    UART_sendString("Completed\r\n");
+}
+
+// Function to control the speed of the motor
+void Speed_Control(uint8_t com)
+{
+    // Run the motor at 500Hz
+    if(com == 1)
     {
-        dutyCycle = PWM_RANGE;
+        STEP = 1;
+        __delay_us(1000);
+        STEP = 0;
+        __delay_us(1000);
     }
-    // Control the duty cycle of the PWM module
-    CCP1CONbits.CCP1Y = (dutyCycle) & 1;
-    CCP1CONbits.CCP1X = (dutyCycle) & 2;
-    // Move 8 MSB-bit to CCPRL
-    CCPR1L = (dutyCycle) >> 2;
-    // Activate Timer 2
-    TMR2ON = 1;
+    // Run the motor at 750Hz
+    else if(com == 2)
+    {
+        STEP = 1;
+        __delay_us(750);
+        STEP = 0;
+        __delay_us(750);
+    }
+    // Run the motor at 1000Hz
+    else if(com == 3)
+    {
+        STEP = 1;
+        __delay_us(500);
+        STEP = 0;
+        __delay_us(500);
+    }
+}
+
+// Function to handle the command send by UART
+void Command_Handling(uint8_t com)
+{
+    // Change direction of the motor
+    if(command == Direc)
+    {
+        DIR = ~DIR;
+    }
+    // Speed 1 mode
+    else if(command == Speed1)
+    {
+        mode = 0;
+        speedmode = 1;
+    }
+    // Speed 2 mode
+    else if(command == Speed2)
+    {
+        mode = 0;
+        speedmode = 2;
+    }
+    // Speed 3 mode
+    else if(command == Speed3)
+    {
+        mode = 0;
+        speedmode = 3;
+    }
+    else
+    {
+        mode = 1;
+        Position_Control(command);
+    }
 }
 
 // Interrupt handling service
@@ -91,8 +149,7 @@ void __interrupt() ISR(void)
         // De-bounce of button
         __delay_ms(20);
         if(RB0 == 0){
-            EN = 0;
-            Speed_Control(PWM_FREQ_MIN, 0);
+            EN = 1;           
         }
         while(RB0 == 0);
         // Clear flag bit
@@ -107,51 +164,34 @@ void __interrupt() ISR(void)
             CREN = 1;  
         }
         command = RCREG;
-        sprintf(rcvStr,"Received: [%c]\r\n",command);
+        sprintf(rcvStr,"Received: %c\r\n",command);
         UART_sendString(rcvStr);
         // Change direction of the motor
-        if(command == Direc)
-        {
-            DIR = ~DIR;
-        }
-        else if(command == Speed1)
-        {
-            motor_freq = 4000;
-            UART_sendString("Speed 1 running");
-        }
-        else if(command == Speed2)
-        {
-            motor_freq = 6000;
-            UART_sendString("Speed 2 running");
-        }
-        else if(command == Speed3)
-        {
-            motor_freq = 8000;
-            UART_sendString("Speed 3 running");
-        }
-        else
-        {
-            mode = 1;
-            //Command_Handling(command);
-        }
+        Command_Handling(command);
     }
 }
 
 void main(void) 
 {
+    // GPIO initialization
+    TRISD0 = 0;
+    TRISD1 = 0;
+    TRISD2 = 0;
     // System initialization
     ExtInt_Init();
-    PWM_Init();
     UART_Init();
+    __delay_ms(20);
+    UART_sendString("System is ready\r\n");
     // Turn on the motor running counterclockwise
-    EN = 1;
+    EN = 0;
     DIR = 1;
-    // 
+    STEP = 0;
+    // Main duty
     while(1)
     {
         if(mode == 0)
         {
-            Speed_Control(motor_freq, 1);
+            Speed_Control(speedmode);
         }
     }
     return;

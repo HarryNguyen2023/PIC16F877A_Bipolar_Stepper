@@ -1870,7 +1870,7 @@ void UART_sendData(uint8_t* str, uint8_t len);
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config BOREN = ON
-#pragma config LVP = OFF
+#pragma config LVP = ON
 #pragma config CPD = OFF
 #pragma config WRT = OFF
 #pragma config CP = OFF
@@ -1970,11 +1970,11 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 # 4 "Bipolar_Stepper.c" 2
-# 31 "Bipolar_Stepper.c"
+# 27 "Bipolar_Stepper.c"
 char rcvStr[17];
-volatile uint8_t mode = 0;
-volatile uint8_t command;
-volatile uint16_t motor_freq = 2000;
+volatile uint8_t command = 0;
+volatile uint8_t speedmode = 0;
+uint8_t mode = 0;
 
 
 void ExtInt_Init(){
@@ -1987,43 +1987,105 @@ void ExtInt_Init(){
 }
 
 
-void PWM_Init(void){
+void Position_Control(uint8_t com)
+{
+    float degree = 0;
 
-    TRISC2 = 0;
+    if(com == 52)
+    {
+        degree = 30;
+    }else if(com == 53)
+    {
+        degree = 45;
+    }else if(com == 54)
+    {
+        degree = 90;
+    }else if(com == 55)
+    {
+        degree = 180;
+    }else if(com == 56)
+    {
+        degree = 270;
+    }else if(com == 57)
+    {
+        degree = 360;
+    }else{
+        UART_sendString("Invalid command\r\n");
+        return;
+    }
 
-    CCP1M3 = 1;
-    CCP1M2 = 1;
+    uint16_t step = (degree * 1.0)/1.8;
+
+    for(uint16_t i = 0; i < step; ++i)
+    {
+        RD2 = 1;
+        _delay((unsigned long)((500)*(16000000/4000000.0)));
+        RD2 = 0;
+        _delay((unsigned long)((500)*(16000000/4000000.0)));
+    }
+    UART_sendString("Completed\r\n");
 }
 
 
-void Speed_Control(uint16_t PWM_FREQ, uint8_t State){
-    uint16_t dutyCycle;
-    if(PWM_FREQ > 10000 || PWM_FREQ < 1500)
-    {
-        UART_sendString("ERROR: invalid frequency!");
-        return;
-    }
-    uint16_t PWM_RANGE = (16000000/(16*PWM_FREQ)) & 0xFFFF;
-    PR2 = ((PWM_RANGE/4) - 1) & 0xFF;
+void Speed_Control(uint8_t com)
+{
 
-    T2CKPS1 = 1;
-    T2CKPS0 = 1;
-
-    if(State == 0)
+    if(com == 1)
     {
-        dutyCycle = 0;
-    }
-    else if(State == 1)
-    {
-        dutyCycle = PWM_RANGE;
+        RD2 = 1;
+        _delay((unsigned long)((1000)*(16000000/4000000.0)));
+        RD2 = 0;
+        _delay((unsigned long)((1000)*(16000000/4000000.0)));
     }
 
-    CCP1CONbits.CCP1Y = (dutyCycle) & 1;
-    CCP1CONbits.CCP1X = (dutyCycle) & 2;
+    else if(com == 2)
+    {
+        RD2 = 1;
+        _delay((unsigned long)((750)*(16000000/4000000.0)));
+        RD2 = 0;
+        _delay((unsigned long)((750)*(16000000/4000000.0)));
+    }
 
-    CCPR1L = (dutyCycle) >> 2;
+    else if(com == 3)
+    {
+        RD2 = 1;
+        _delay((unsigned long)((500)*(16000000/4000000.0)));
+        RD2 = 0;
+        _delay((unsigned long)((500)*(16000000/4000000.0)));
+    }
+}
 
-    TMR2ON = 1;
+
+void Command_Handling(uint8_t com)
+{
+
+    if(command == 48)
+    {
+        RD0 = ~RD0;
+    }
+
+    else if(command == 49)
+    {
+        mode = 0;
+        speedmode = 1;
+    }
+
+    else if(command == 50)
+    {
+        mode = 0;
+        speedmode = 2;
+    }
+
+    else if(command == 51)
+    {
+        mode = 0;
+        speedmode = 3;
+    }
+    else
+    {
+        mode = 1;
+        Position_Control(command);
+    }
 }
 
 
@@ -2034,8 +2096,7 @@ void __attribute__((picinterrupt(("")))) ISR(void)
 
         _delay((unsigned long)((20)*(16000000/4000.0)));
         if(RB0 == 0){
-            RD1 = 0;
-            Speed_Control(1500, 0);
+            RD1 = 1;
         }
         while(RB0 == 0);
 
@@ -2050,51 +2111,34 @@ void __attribute__((picinterrupt(("")))) ISR(void)
             CREN = 1;
         }
         command = RCREG;
-        sprintf(rcvStr,"Received: [%c]\r\n",command);
+        sprintf(rcvStr,"Received: %c\r\n",command);
         UART_sendString(rcvStr);
 
-        if(command == 48)
-        {
-            RD0 = ~RD0;
-        }
-        else if(command == 49)
-        {
-            motor_freq = 4000;
-            UART_sendString("Speed 1 running");
-        }
-        else if(command == 50)
-        {
-            motor_freq = 6000;
-            UART_sendString("Speed 2 running");
-        }
-        else if(command == 51)
-        {
-            motor_freq = 8000;
-            UART_sendString("Speed 3 running");
-        }
-        else
-        {
-            mode = 1;
-
-        }
+        Command_Handling(command);
     }
 }
 
 void main(void)
 {
 
-    ExtInt_Init();
-    PWM_Init();
-    UART_Init();
+    TRISD0 = 0;
+    TRISD1 = 0;
+    TRISD2 = 0;
 
-    RD1 = 1;
+    ExtInt_Init();
+    UART_Init();
+    _delay((unsigned long)((20)*(16000000/4000.0)));
+    UART_sendString("System is ready\r\n");
+
+    RD1 = 0;
     RD0 = 1;
+    RD2 = 0;
 
     while(1)
     {
         if(mode == 0)
         {
-            Speed_Control(motor_freq, 1);
+            Speed_Control(speedmode);
         }
     }
     return;

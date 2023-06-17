@@ -3,7 +3,7 @@
 #ifndef XC_HEADER_TEMPLATE_H
 #define	XC_HEADER_TEMPLATE_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h>
 
 #define _XTAL_FREQ 16000000
 // Specify the baud rate of the UART 
@@ -16,5 +16,6 @@ void UART_sendString(char* str);
 void UART_sendData(uint8_t* str, uint8_t len);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
+ 
 
 

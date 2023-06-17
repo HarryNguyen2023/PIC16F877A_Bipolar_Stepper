@@ -14,55 +14,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2574
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2574: extern volatile __bit GIE __attribute__((address(0x5F)));
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
-"2970
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2970: extern volatile __bit TRISC2 __attribute__((address(0x43A)));
-[v _TRISC2 `Vb ~T0 @X0 0 e@1082 ]
-"2454
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2454: extern volatile __bit CCP1M3 __attribute__((address(0xBB)));
-[v _CCP1M3 `Vb ~T0 @X0 0 e@187 ]
-"2451
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2451: extern volatile __bit CCP1M2 __attribute__((address(0xBA)));
-[v _CCP1M2 `Vb ~T0 @X0 0 e@186 ]
 "15 ./UART.h
 [; ;./UART.h: 15: void UART_sendString(char* str);
 [v _UART_sendString `(v ~T0 @X0 0 ef1`*uc ]
-"1817 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1817: extern volatile unsigned char PR2 __attribute__((address(0x092)));
-[v _PR2 `Vuc ~T0 @X0 0 e@146 ]
-"2880
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2880: extern volatile __bit T2CKPS1 __attribute__((address(0x91)));
-[v _T2CKPS1 `Vb ~T0 @X0 0 e@145 ]
-"2877
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2877: extern volatile __bit T2CKPS0 __attribute__((address(0x90)));
-[v _T2CKPS0 `Vb ~T0 @X0 0 e@144 ]
-"913
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 913:     struct {
-[s S35 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . CCP1M CCP1Y CCP1X ]
-"918
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 918:     struct {
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 ]
-"912
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 912: typedef union {
-[u S34 `S35 1 `S36 1 ]
-[n S34 . . . ]
-"925
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 925: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0x017)));
-[v _CCP1CONbits `VS34 ~T0 @X0 0 e@23 ]
-"893
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 893: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
-[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
-"2907
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2907: extern volatile __bit TMR2ON __attribute__((address(0x92)));
-[v _TMR2ON `Vb ~T0 @X0 0 e@146 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
+"2760 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2760: extern volatile __bit RD2 __attribute__((address(0x42)));
+[v _RD2 `Vb ~T0 @X0 0 e@66 ]
 [v F36 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
 [p i __delay ]
-"2679 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
+"2754 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2754: extern volatile __bit RD0 __attribute__((address(0x40)));
+[v _RD0 `Vb ~T0 @X0 0 e@64 ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"2679
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2679: extern volatile __bit RB0 __attribute__((address(0x30)));
 [v _RB0 `Vb ~T0 @X0 0 e@48 ]
 "2757
@@ -82,10 +49,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
 "194 C:\Program Files\Microchip\xc8\v2.41\pic\include\c90\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"2754 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2754: extern volatile __bit RD0 __attribute__((address(0x40)));
-[v _RD0 `Vb ~T0 @X0 0 e@64 ]
 [p mainexit ]
+"2988 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2988: extern volatile __bit TRISD0 __attribute__((address(0x440)));
+[v _TRISD0 `Vb ~T0 @X0 0 e@1088 ]
+"2991
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2991: extern volatile __bit TRISD1 __attribute__((address(0x441)));
+[v _TRISD1 `Vb ~T0 @X0 0 e@1089 ]
+"2994
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2994: extern volatile __bit TRISD2 __attribute__((address(0x442)));
+[v _TRISD2 `Vb ~T0 @X0 0 e@1090 ]
 "12 ./UART.h
 [; ;./UART.h: 12: void UART_Init(void);
 [v _UART_Init `(v ~T0 @X0 0 ef ]
@@ -278,379 +251,548 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [p x BOREN  =  ON        ]
 "14
-[p x LVP  =  OFF         ]
+[p x LVP  =  ON         ]
 "15
 [p x CPD  =  OFF         ]
 "16
 [p x WRT  =  OFF         ]
 "17
 [p x CP  =  OFF          ]
-"31 Bipolar_Stepper.c
-[; ;Bipolar_Stepper.c: 31: char rcvStr[17];
+"27 Bipolar_Stepper.c
+[; ;Bipolar_Stepper.c: 27: char rcvStr[17];
 [v _rcvStr `uc ~T0 @X0 -> 17 `i e ]
-"32
-[; ;Bipolar_Stepper.c: 32: volatile uint8_t mode = 0;
-[v _mode `Vuc ~T0 @X0 1 e ]
+"28
+[; ;Bipolar_Stepper.c: 28: volatile uint8_t command = 0;
+[v _command `Vuc ~T0 @X0 1 e ]
+[i _command
+-> -> 0 `i `uc
+]
+"29
+[; ;Bipolar_Stepper.c: 29: volatile uint8_t speedmode = 0;
+[v _speedmode `Vuc ~T0 @X0 1 e ]
+[i _speedmode
+-> -> 0 `i `uc
+]
+"30
+[; ;Bipolar_Stepper.c: 30: uint8_t mode = 0;
+[v _mode `uc ~T0 @X0 1 e ]
 [i _mode
 -> -> 0 `i `uc
 ]
 "33
-[; ;Bipolar_Stepper.c: 33: volatile uint8_t command;
-[v _command `Vuc ~T0 @X0 1 e ]
-"34
-[; ;Bipolar_Stepper.c: 34: volatile uint16_t motor_freq = 2000;
-[v _motor_freq `Vui ~T0 @X0 1 e ]
-[i _motor_freq
--> -> 2000 `i `ui
-]
-"37
-[; ;Bipolar_Stepper.c: 37: void ExtInt_Init(){
+[; ;Bipolar_Stepper.c: 33: void ExtInt_Init(){
 [v _ExtInt_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _ExtInt_Init ]
 [f ]
-"38
-[; ;Bipolar_Stepper.c: 38:     TRISB0 = 1;
+"34
+[; ;Bipolar_Stepper.c: 34:     TRISB0 = 1;
 [e = _TRISB0 -> -> 1 `i `b ]
-"40
-[; ;Bipolar_Stepper.c: 40:     INTEDG = 0;
+"36
+[; ;Bipolar_Stepper.c: 36:     INTEDG = 0;
 [e = _INTEDG -> -> 0 `i `b ]
-"41
-[; ;Bipolar_Stepper.c: 41:     INTF = 0;
+"37
+[; ;Bipolar_Stepper.c: 37:     INTF = 0;
 [e = _INTF -> -> 0 `i `b ]
-"42
-[; ;Bipolar_Stepper.c: 42:     INTE = 1;
+"38
+[; ;Bipolar_Stepper.c: 38:     INTE = 1;
 [e = _INTE -> -> 1 `i `b ]
-"43
-[; ;Bipolar_Stepper.c: 43:     GIE = 1;
+"39
+[; ;Bipolar_Stepper.c: 39:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-"44
-[; ;Bipolar_Stepper.c: 44: }
+"40
+[; ;Bipolar_Stepper.c: 40: }
 [e :UE 96 ]
 }
+"43
+[; ;Bipolar_Stepper.c: 43: void Position_Control(uint8_t com)
+[v _Position_Control `(v ~T0 @X0 1 ef1`uc ]
+"44
+[; ;Bipolar_Stepper.c: 44: {
+{
+[e :U _Position_Control ]
+"43
+[; ;Bipolar_Stepper.c: 43: void Position_Control(uint8_t com)
+[v _com `uc ~T0 @X0 1 r1 ]
+"44
+[; ;Bipolar_Stepper.c: 44: {
+[f ]
+"45
+[; ;Bipolar_Stepper.c: 45:     float degree = 0;
+[v _degree `f ~T0 @X0 1 a ]
+[e = _degree -> -> 0 `i `f ]
 "47
-[; ;Bipolar_Stepper.c: 47: void PWM_Init(void){
-[v _PWM_Init `(v ~T0 @X0 1 ef ]
+[; ;Bipolar_Stepper.c: 47:     if(com == 52)
+[e $ ! == -> _com `i -> 52 `i 98  ]
+"48
+[; ;Bipolar_Stepper.c: 48:     {
 {
-[e :U _PWM_Init ]
-[f ]
 "49
-[; ;Bipolar_Stepper.c: 49:     TRISC2 = 0;
-[e = _TRISC2 -> -> 0 `i `b ]
+[; ;Bipolar_Stepper.c: 49:         degree = 30;
+[e = _degree -> -> 30 `i `f ]
+"50
+[; ;Bipolar_Stepper.c: 50:     }else if(com == 53)
+}
+[e $U 99  ]
+[e :U 98 ]
+[e $ ! == -> _com `i -> 53 `i 100  ]
 "51
-[; ;Bipolar_Stepper.c: 51:     CCP1M3 = 1;
-[e = _CCP1M3 -> -> 1 `i `b ]
+[; ;Bipolar_Stepper.c: 51:     {
+{
 "52
-[; ;Bipolar_Stepper.c: 52:     CCP1M2 = 1;
-[e = _CCP1M2 -> -> 1 `i `b ]
+[; ;Bipolar_Stepper.c: 52:         degree = 45;
+[e = _degree -> -> 45 `i `f ]
 "53
-[; ;Bipolar_Stepper.c: 53: }
-[e :UE 97 ]
-}
-"56
-[; ;Bipolar_Stepper.c: 56: void Speed_Control(uint16_t PWM_FREQ, uint8_t State){
-[v _Speed_Control `(v ~T0 @X0 1 ef2`ui`uc ]
-{
-[e :U _Speed_Control ]
-[v _PWM_FREQ `ui ~T0 @X0 1 r1 ]
-[v _State `uc ~T0 @X0 1 r2 ]
-[f ]
-"57
-[; ;Bipolar_Stepper.c: 57:     uint16_t dutyCycle;
-[v _dutyCycle `ui ~T0 @X0 1 a ]
-"58
-[; ;Bipolar_Stepper.c: 58:     if(PWM_FREQ > 10000 || PWM_FREQ < 1500)
-[e $ ! || > _PWM_FREQ -> -> 10000 `i `ui < _PWM_FREQ -> -> 1500 `i `ui 99  ]
-"59
-[; ;Bipolar_Stepper.c: 59:     {
-{
-"60
-[; ;Bipolar_Stepper.c: 60:         UART_sendString("ERROR: invalid frequency!");
-[e ( _UART_sendString (1 :s 1C ]
-"61
-[; ;Bipolar_Stepper.c: 61:         return;
-[e $UE 98  ]
-"62
-[; ;Bipolar_Stepper.c: 62:     }
-}
-[e :U 99 ]
-"63
-[; ;Bipolar_Stepper.c: 63:     uint16_t PWM_RANGE = (16000000/(16*PWM_FREQ)) & 0xFFFF;
-[v _PWM_RANGE `ui ~T0 @X0 1 a ]
-[e = _PWM_RANGE -> & / -> 16000000 `l -> * -> -> 16 `i `ui _PWM_FREQ `l -> -> 65535 `ui `l `ui ]
-"64
-[; ;Bipolar_Stepper.c: 64:     PR2 = ((PWM_RANGE/4) - 1) & 0xFF;
-[e = _PR2 -> & - / _PWM_RANGE -> -> 4 `i `ui -> -> 1 `i `ui -> -> 255 `i `ui `uc ]
-"66
-[; ;Bipolar_Stepper.c: 66:     T2CKPS1 = 1;
-[e = _T2CKPS1 -> -> 1 `i `b ]
-"67
-[; ;Bipolar_Stepper.c: 67:     T2CKPS0 = 1;
-[e = _T2CKPS0 -> -> 1 `i `b ]
-"69
-[; ;Bipolar_Stepper.c: 69:     if(State == 0)
-[e $ ! == -> _State `i -> 0 `i 100  ]
-"70
-[; ;Bipolar_Stepper.c: 70:     {
-{
-"71
-[; ;Bipolar_Stepper.c: 71:         dutyCycle = 0;
-[e = _dutyCycle -> -> 0 `i `ui ]
-"72
-[; ;Bipolar_Stepper.c: 72:     }
+[; ;Bipolar_Stepper.c: 53:     }else if(com == 54)
 }
 [e $U 101  ]
-"73
-[; ;Bipolar_Stepper.c: 73:     else if(State == 1)
 [e :U 100 ]
-[e $ ! == -> _State `i -> 1 `i 102  ]
-"74
-[; ;Bipolar_Stepper.c: 74:     {
+[e $ ! == -> _com `i -> 54 `i 102  ]
+"54
+[; ;Bipolar_Stepper.c: 54:     {
 {
-"75
-[; ;Bipolar_Stepper.c: 75:         dutyCycle = PWM_RANGE;
-[e = _dutyCycle _PWM_RANGE ]
-"76
-[; ;Bipolar_Stepper.c: 76:     }
+"55
+[; ;Bipolar_Stepper.c: 55:         degree = 90;
+[e = _degree -> -> 90 `i `f ]
+"56
+[; ;Bipolar_Stepper.c: 56:     }else if(com == 55)
 }
+[e $U 103  ]
 [e :U 102 ]
-[e :U 101 ]
-"78
-[; ;Bipolar_Stepper.c: 78:     CCP1CONbits.CCP1Y = (dutyCycle) & 1;
-[e = . . _CCP1CONbits 0 1 -> & _dutyCycle -> -> 1 `i `ui `uc ]
-"79
-[; ;Bipolar_Stepper.c: 79:     CCP1CONbits.CCP1X = (dutyCycle) & 2;
-[e = . . _CCP1CONbits 0 2 -> & _dutyCycle -> -> 2 `i `ui `uc ]
-"81
-[; ;Bipolar_Stepper.c: 81:     CCPR1L = (dutyCycle) >> 2;
-[e = _CCPR1L -> >> _dutyCycle -> 2 `i `uc ]
-"83
-[; ;Bipolar_Stepper.c: 83:     TMR2ON = 1;
-[e = _TMR2ON -> -> 1 `i `b ]
-"84
-[; ;Bipolar_Stepper.c: 84: }
-[e :UE 98 ]
+[e $ ! == -> _com `i -> 55 `i 104  ]
+"57
+[; ;Bipolar_Stepper.c: 57:     {
+{
+"58
+[; ;Bipolar_Stepper.c: 58:         degree = 180;
+[e = _degree -> -> 180 `i `f ]
+"59
+[; ;Bipolar_Stepper.c: 59:     }else if(com == 56)
 }
-[v $root$_ISR `(v ~T0 @X0 0 e ]
-"87
-[; ;Bipolar_Stepper.c: 87: void __attribute__((picinterrupt(("")))) ISR(void)
-[v _ISR `(v ~T1 @X0 1 ef ]
-"88
-[; ;Bipolar_Stepper.c: 88: {
+[e $U 105  ]
+[e :U 104 ]
+[e $ ! == -> _com `i -> 56 `i 106  ]
+"60
+[; ;Bipolar_Stepper.c: 60:     {
 {
-[e :U _ISR ]
-[f ]
-"90
-[; ;Bipolar_Stepper.c: 90:     if(INTF){
-[e $ ! _INTF 104  ]
-{
-"92
-[; ;Bipolar_Stepper.c: 92:         _delay((unsigned long)((20)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"93
-[; ;Bipolar_Stepper.c: 93:         if(RB0 == 0){
-[e $ ! == -> _RB0 `i -> 0 `i 105  ]
-{
-"94
-[; ;Bipolar_Stepper.c: 94:             RD1 = 0;
-[e = _RD1 -> -> 0 `i `b ]
-"95
-[; ;Bipolar_Stepper.c: 95:             Speed_Control(1500, 0);
-[e ( _Speed_Control (2 , -> -> 1500 `i `ui -> -> 0 `i `uc ]
-"96
-[; ;Bipolar_Stepper.c: 96:         }
+"61
+[; ;Bipolar_Stepper.c: 61:         degree = 270;
+[e = _degree -> -> 270 `i `f ]
+"62
+[; ;Bipolar_Stepper.c: 62:     }else if(com == 57)
 }
-[e :U 105 ]
-"97
-[; ;Bipolar_Stepper.c: 97:         while(RB0 == 0);
-[e $U 106  ]
-[e :U 107 ]
+[e $U 107  ]
 [e :U 106 ]
-[e $ == -> _RB0 `i -> 0 `i 107  ]
+[e $ ! == -> _com `i -> 57 `i 108  ]
+"63
+[; ;Bipolar_Stepper.c: 63:     {
+{
+"64
+[; ;Bipolar_Stepper.c: 64:         degree = 360;
+[e = _degree -> -> 360 `i `f ]
+"65
+[; ;Bipolar_Stepper.c: 65:     }else{
+}
+[e $U 109  ]
 [e :U 108 ]
+{
+"66
+[; ;Bipolar_Stepper.c: 66:         UART_sendString("Invalid command\r\n");
+[e ( _UART_sendString (1 :s 1C ]
+"67
+[; ;Bipolar_Stepper.c: 67:         return;
+[e $UE 97  ]
+"68
+[; ;Bipolar_Stepper.c: 68:     }
+}
+[e :U 109 ]
+[e :U 107 ]
+[e :U 105 ]
+[e :U 103 ]
+[e :U 101 ]
+[e :U 99 ]
+"70
+[; ;Bipolar_Stepper.c: 70:     uint16_t step = (degree * 1.0)/1.8;
+[v _step `ui ~T0 @X0 1 a ]
+[e = _step -> / * -> _degree `d .1.0 .1.8 `ui ]
+"72
+[; ;Bipolar_Stepper.c: 72:     for(uint16_t i = 0; i < step; ++i)
+{
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
+[e $U 113  ]
+[e :U 110 ]
+"73
+[; ;Bipolar_Stepper.c: 73:     {
+{
+"74
+[; ;Bipolar_Stepper.c: 74:         RD2 = 1;
+[e = _RD2 -> -> 1 `i `b ]
+"75
+[; ;Bipolar_Stepper.c: 75:         _delay((unsigned long)((500)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"76
+[; ;Bipolar_Stepper.c: 76:         RD2 = 0;
+[e = _RD2 -> -> 0 `i `b ]
+"77
+[; ;Bipolar_Stepper.c: 77:         _delay((unsigned long)((500)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"78
+[; ;Bipolar_Stepper.c: 78:     }
+}
+[e =+ _i -> -> 1 `i `ui ]
+[e :U 113 ]
+[e $ < _i _step 110  ]
+[e :U 111 ]
+}
+"79
+[; ;Bipolar_Stepper.c: 79:     UART_sendString("Completed\r\n");
+[e ( _UART_sendString (1 :s 2C ]
+"80
+[; ;Bipolar_Stepper.c: 80: }
+[e :UE 97 ]
+}
+"83
+[; ;Bipolar_Stepper.c: 83: void Speed_Control(uint8_t com)
+[v _Speed_Control `(v ~T0 @X0 1 ef1`uc ]
+"84
+[; ;Bipolar_Stepper.c: 84: {
+{
+[e :U _Speed_Control ]
+"83
+[; ;Bipolar_Stepper.c: 83: void Speed_Control(uint8_t com)
+[v _com `uc ~T0 @X0 1 r1 ]
+"84
+[; ;Bipolar_Stepper.c: 84: {
+[f ]
+"86
+[; ;Bipolar_Stepper.c: 86:     if(com == 1)
+[e $ ! == -> _com `i -> 1 `i 115  ]
+"87
+[; ;Bipolar_Stepper.c: 87:     {
+{
+"88
+[; ;Bipolar_Stepper.c: 88:         RD2 = 1;
+[e = _RD2 -> -> 1 `i `b ]
+"89
+[; ;Bipolar_Stepper.c: 89:         _delay((unsigned long)((1000)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"90
+[; ;Bipolar_Stepper.c: 90:         RD2 = 0;
+[e = _RD2 -> -> 0 `i `b ]
+"91
+[; ;Bipolar_Stepper.c: 91:         _delay((unsigned long)((1000)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"92
+[; ;Bipolar_Stepper.c: 92:     }
+}
+[e $U 116  ]
+"94
+[; ;Bipolar_Stepper.c: 94:     else if(com == 2)
+[e :U 115 ]
+[e $ ! == -> _com `i -> 2 `i 117  ]
+"95
+[; ;Bipolar_Stepper.c: 95:     {
+{
+"96
+[; ;Bipolar_Stepper.c: 96:         RD2 = 1;
+[e = _RD2 -> -> 1 `i `b ]
+"97
+[; ;Bipolar_Stepper.c: 97:         _delay((unsigned long)((750)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 750 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"98
+[; ;Bipolar_Stepper.c: 98:         RD2 = 0;
+[e = _RD2 -> -> 0 `i `b ]
 "99
-[; ;Bipolar_Stepper.c: 99:         INTF = 0;
-[e = _INTF -> -> 0 `i `b ]
+[; ;Bipolar_Stepper.c: 99:         _delay((unsigned long)((750)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 750 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "100
 [; ;Bipolar_Stepper.c: 100:     }
 }
-[e :U 104 ]
+[e $U 118  ]
 "102
-[; ;Bipolar_Stepper.c: 102:     if(RCIF){
-[e $ ! _RCIF 109  ]
+[; ;Bipolar_Stepper.c: 102:     else if(com == 3)
+[e :U 117 ]
+[e $ ! == -> _com `i -> 3 `i 119  ]
+"103
+[; ;Bipolar_Stepper.c: 103:     {
 {
 "104
-[; ;Bipolar_Stepper.c: 104:         if (OERR)
-[e $ ! _OERR 110  ]
+[; ;Bipolar_Stepper.c: 104:         RD2 = 1;
+[e = _RD2 -> -> 1 `i `b ]
 "105
-[; ;Bipolar_Stepper.c: 105:         {
-{
+[; ;Bipolar_Stepper.c: 105:         _delay((unsigned long)((500)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "106
-[; ;Bipolar_Stepper.c: 106:             CREN = 0;
-[e = _CREN -> -> 0 `i `b ]
+[; ;Bipolar_Stepper.c: 106:         RD2 = 0;
+[e = _RD2 -> -> 0 `i `b ]
 "107
-[; ;Bipolar_Stepper.c: 107:             CREN = 1;
-[e = _CREN -> -> 1 `i `b ]
+[; ;Bipolar_Stepper.c: 107:         _delay((unsigned long)((500)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "108
-[; ;Bipolar_Stepper.c: 108:         }
+[; ;Bipolar_Stepper.c: 108:     }
 }
-[e :U 110 ]
-"109
-[; ;Bipolar_Stepper.c: 109:         command = RCREG;
-[e = _command _RCREG ]
-"110
-[; ;Bipolar_Stepper.c: 110:         sprintf(rcvStr,"Received: [%c]\r\n",command);
-[e ( _sprintf (1 , (. , &U _rcvStr :s 2C -> _command `i ]
-"111
-[; ;Bipolar_Stepper.c: 111:         UART_sendString(rcvStr);
-[e ( _UART_sendString (1 &U _rcvStr ]
-"113
-[; ;Bipolar_Stepper.c: 113:         if(command == 48)
-[e $ ! == -> _command `i -> 48 `i 111  ]
-"114
-[; ;Bipolar_Stepper.c: 114:         {
-{
-"115
-[; ;Bipolar_Stepper.c: 115:             RD0 = ~RD0;
-[e = _RD0 -> ~ -> _RD0 `ui `b ]
-"116
-[; ;Bipolar_Stepper.c: 116:         }
-}
-[e $U 112  ]
-"117
-[; ;Bipolar_Stepper.c: 117:         else if(command == 49)
-[e :U 111 ]
-[e $ ! == -> _command `i -> 49 `i 113  ]
-"118
-[; ;Bipolar_Stepper.c: 118:         {
-{
-"119
-[; ;Bipolar_Stepper.c: 119:             motor_freq = 4000;
-[e = _motor_freq -> -> 4000 `i `ui ]
-"120
-[; ;Bipolar_Stepper.c: 120:             UART_sendString("Speed 1 running");
-[e ( _UART_sendString (1 :s 3C ]
-"121
-[; ;Bipolar_Stepper.c: 121:         }
-}
-[e $U 114  ]
-"122
-[; ;Bipolar_Stepper.c: 122:         else if(command == 50)
-[e :U 113 ]
-[e $ ! == -> _command `i -> 50 `i 115  ]
-"123
-[; ;Bipolar_Stepper.c: 123:         {
-{
-"124
-[; ;Bipolar_Stepper.c: 124:             motor_freq = 6000;
-[e = _motor_freq -> -> 6000 `i `ui ]
-"125
-[; ;Bipolar_Stepper.c: 125:             UART_sendString("Speed 2 running");
-[e ( _UART_sendString (1 :s 4C ]
-"126
-[; ;Bipolar_Stepper.c: 126:         }
-}
-[e $U 116  ]
-"127
-[; ;Bipolar_Stepper.c: 127:         else if(command == 51)
-[e :U 115 ]
-[e $ ! == -> _command `i -> 51 `i 117  ]
-"128
-[; ;Bipolar_Stepper.c: 128:         {
-{
-"129
-[; ;Bipolar_Stepper.c: 129:             motor_freq = 8000;
-[e = _motor_freq -> -> 8000 `i `ui ]
-"130
-[; ;Bipolar_Stepper.c: 130:             UART_sendString("Speed 3 running");
-[e ( _UART_sendString (1 :s 5C ]
-"131
-[; ;Bipolar_Stepper.c: 131:         }
-}
-[e $U 118  ]
-"132
-[; ;Bipolar_Stepper.c: 132:         else
-[e :U 117 ]
-"133
-[; ;Bipolar_Stepper.c: 133:         {
-{
-"134
-[; ;Bipolar_Stepper.c: 134:             mode = 1;
-[e = _mode -> -> 1 `i `uc ]
-"136
-[; ;Bipolar_Stepper.c: 136:         }
-}
+[e :U 119 ]
 [e :U 118 ]
 [e :U 116 ]
-[e :U 114 ]
-[e :U 112 ]
-"137
-[; ;Bipolar_Stepper.c: 137:     }
+"109
+[; ;Bipolar_Stepper.c: 109: }
+[e :UE 114 ]
 }
-[e :U 109 ]
+"112
+[; ;Bipolar_Stepper.c: 112: void Command_Handling(uint8_t com)
+[v _Command_Handling `(v ~T0 @X0 1 ef1`uc ]
+"113
+[; ;Bipolar_Stepper.c: 113: {
+{
+[e :U _Command_Handling ]
+"112
+[; ;Bipolar_Stepper.c: 112: void Command_Handling(uint8_t com)
+[v _com `uc ~T0 @X0 1 r1 ]
+"113
+[; ;Bipolar_Stepper.c: 113: {
+[f ]
+"115
+[; ;Bipolar_Stepper.c: 115:     if(command == 48)
+[e $ ! == -> _command `i -> 48 `i 121  ]
+"116
+[; ;Bipolar_Stepper.c: 116:     {
+{
+"117
+[; ;Bipolar_Stepper.c: 117:         RD0 = ~RD0;
+[e = _RD0 -> ~ -> _RD0 `ui `b ]
+"118
+[; ;Bipolar_Stepper.c: 118:     }
+}
+[e $U 122  ]
+"120
+[; ;Bipolar_Stepper.c: 120:     else if(command == 49)
+[e :U 121 ]
+[e $ ! == -> _command `i -> 49 `i 123  ]
+"121
+[; ;Bipolar_Stepper.c: 121:     {
+{
+"122
+[; ;Bipolar_Stepper.c: 122:         mode = 0;
+[e = _mode -> -> 0 `i `uc ]
+"123
+[; ;Bipolar_Stepper.c: 123:         speedmode = 1;
+[e = _speedmode -> -> 1 `i `uc ]
+"124
+[; ;Bipolar_Stepper.c: 124:     }
+}
+[e $U 124  ]
+"126
+[; ;Bipolar_Stepper.c: 126:     else if(command == 50)
+[e :U 123 ]
+[e $ ! == -> _command `i -> 50 `i 125  ]
+"127
+[; ;Bipolar_Stepper.c: 127:     {
+{
+"128
+[; ;Bipolar_Stepper.c: 128:         mode = 0;
+[e = _mode -> -> 0 `i `uc ]
+"129
+[; ;Bipolar_Stepper.c: 129:         speedmode = 2;
+[e = _speedmode -> -> 2 `i `uc ]
+"130
+[; ;Bipolar_Stepper.c: 130:     }
+}
+[e $U 126  ]
+"132
+[; ;Bipolar_Stepper.c: 132:     else if(command == 51)
+[e :U 125 ]
+[e $ ! == -> _command `i -> 51 `i 127  ]
+"133
+[; ;Bipolar_Stepper.c: 133:     {
+{
+"134
+[; ;Bipolar_Stepper.c: 134:         mode = 0;
+[e = _mode -> -> 0 `i `uc ]
+"135
+[; ;Bipolar_Stepper.c: 135:         speedmode = 3;
+[e = _speedmode -> -> 3 `i `uc ]
+"136
+[; ;Bipolar_Stepper.c: 136:     }
+}
+[e $U 128  ]
+"137
+[; ;Bipolar_Stepper.c: 137:     else
+[e :U 127 ]
 "138
-[; ;Bipolar_Stepper.c: 138: }
-[e :UE 103 ]
+[; ;Bipolar_Stepper.c: 138:     {
+{
+"139
+[; ;Bipolar_Stepper.c: 139:         mode = 1;
+[e = _mode -> -> 1 `i `uc ]
+"140
+[; ;Bipolar_Stepper.c: 140:         Position_Control(command);
+[e ( _Position_Control (1 _command ]
+"141
+[; ;Bipolar_Stepper.c: 141:     }
+}
+[e :U 128 ]
+[e :U 126 ]
+[e :U 124 ]
+[e :U 122 ]
+"142
+[; ;Bipolar_Stepper.c: 142: }
+[e :UE 120 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"145
+[; ;Bipolar_Stepper.c: 145: void __attribute__((picinterrupt(("")))) ISR(void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"146
+[; ;Bipolar_Stepper.c: 146: {
+{
+[e :U _ISR ]
+[f ]
+"148
+[; ;Bipolar_Stepper.c: 148:     if(INTF){
+[e $ ! _INTF 130  ]
+{
+"150
+[; ;Bipolar_Stepper.c: 150:         _delay((unsigned long)((20)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"151
+[; ;Bipolar_Stepper.c: 151:         if(RB0 == 0){
+[e $ ! == -> _RB0 `i -> 0 `i 131  ]
+{
+"152
+[; ;Bipolar_Stepper.c: 152:             RD1 = 1;
+[e = _RD1 -> -> 1 `i `b ]
+"153
+[; ;Bipolar_Stepper.c: 153:         }
+}
+[e :U 131 ]
+"154
+[; ;Bipolar_Stepper.c: 154:         while(RB0 == 0);
+[e $U 132  ]
+[e :U 133 ]
+[e :U 132 ]
+[e $ == -> _RB0 `i -> 0 `i 133  ]
+[e :U 134 ]
+"156
+[; ;Bipolar_Stepper.c: 156:         INTF = 0;
+[e = _INTF -> -> 0 `i `b ]
+"157
+[; ;Bipolar_Stepper.c: 157:     }
+}
+[e :U 130 ]
+"159
+[; ;Bipolar_Stepper.c: 159:     if(RCIF){
+[e $ ! _RCIF 135  ]
+{
+"161
+[; ;Bipolar_Stepper.c: 161:         if (OERR)
+[e $ ! _OERR 136  ]
+"162
+[; ;Bipolar_Stepper.c: 162:         {
+{
+"163
+[; ;Bipolar_Stepper.c: 163:             CREN = 0;
+[e = _CREN -> -> 0 `i `b ]
+"164
+[; ;Bipolar_Stepper.c: 164:             CREN = 1;
+[e = _CREN -> -> 1 `i `b ]
+"165
+[; ;Bipolar_Stepper.c: 165:         }
+}
+[e :U 136 ]
+"166
+[; ;Bipolar_Stepper.c: 166:         command = RCREG;
+[e = _command _RCREG ]
+"167
+[; ;Bipolar_Stepper.c: 167:         sprintf(rcvStr,"Received: %c\r\n",command);
+[e ( _sprintf (1 , (. , &U _rcvStr :s 3C -> _command `i ]
+"168
+[; ;Bipolar_Stepper.c: 168:         UART_sendString(rcvStr);
+[e ( _UART_sendString (1 &U _rcvStr ]
+"170
+[; ;Bipolar_Stepper.c: 170:         Command_Handling(command);
+[e ( _Command_Handling (1 _command ]
+"171
+[; ;Bipolar_Stepper.c: 171:     }
+}
+[e :U 135 ]
+"172
+[; ;Bipolar_Stepper.c: 172: }
+[e :UE 129 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"140
-[; ;Bipolar_Stepper.c: 140: void main(void)
+"174
+[; ;Bipolar_Stepper.c: 174: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"141
-[; ;Bipolar_Stepper.c: 141: {
+"175
+[; ;Bipolar_Stepper.c: 175: {
 {
 [e :U _main ]
 [f ]
-"143
-[; ;Bipolar_Stepper.c: 143:     ExtInt_Init();
+"177
+[; ;Bipolar_Stepper.c: 177:     TRISD0 = 0;
+[e = _TRISD0 -> -> 0 `i `b ]
+"178
+[; ;Bipolar_Stepper.c: 178:     TRISD1 = 0;
+[e = _TRISD1 -> -> 0 `i `b ]
+"179
+[; ;Bipolar_Stepper.c: 179:     TRISD2 = 0;
+[e = _TRISD2 -> -> 0 `i `b ]
+"181
+[; ;Bipolar_Stepper.c: 181:     ExtInt_Init();
 [e ( _ExtInt_Init ..  ]
-"144
-[; ;Bipolar_Stepper.c: 144:     PWM_Init();
-[e ( _PWM_Init ..  ]
-"145
-[; ;Bipolar_Stepper.c: 145:     UART_Init();
+"182
+[; ;Bipolar_Stepper.c: 182:     UART_Init();
 [e ( _UART_Init ..  ]
-"147
-[; ;Bipolar_Stepper.c: 147:     RD1 = 1;
-[e = _RD1 -> -> 1 `i `b ]
-"148
-[; ;Bipolar_Stepper.c: 148:     RD0 = 1;
+"183
+[; ;Bipolar_Stepper.c: 183:     _delay((unsigned long)((20)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"184
+[; ;Bipolar_Stepper.c: 184:     UART_sendString("System is ready\r\n");
+[e ( _UART_sendString (1 :s 4C ]
+"186
+[; ;Bipolar_Stepper.c: 186:     RD1 = 0;
+[e = _RD1 -> -> 0 `i `b ]
+"187
+[; ;Bipolar_Stepper.c: 187:     RD0 = 1;
 [e = _RD0 -> -> 1 `i `b ]
-"150
-[; ;Bipolar_Stepper.c: 150:     while(1)
-[e :U 121 ]
-"151
-[; ;Bipolar_Stepper.c: 151:     {
+"188
+[; ;Bipolar_Stepper.c: 188:     RD2 = 0;
+[e = _RD2 -> -> 0 `i `b ]
+"190
+[; ;Bipolar_Stepper.c: 190:     while(1)
+[e :U 139 ]
+"191
+[; ;Bipolar_Stepper.c: 191:     {
 {
-"152
-[; ;Bipolar_Stepper.c: 152:         if(mode == 0)
-[e $ ! == -> _mode `i -> 0 `i 123  ]
-"153
-[; ;Bipolar_Stepper.c: 153:         {
+"192
+[; ;Bipolar_Stepper.c: 192:         if(mode == 0)
+[e $ ! == -> _mode `i -> 0 `i 141  ]
+"193
+[; ;Bipolar_Stepper.c: 193:         {
 {
-"154
-[; ;Bipolar_Stepper.c: 154:             Speed_Control(motor_freq, 1);
-[e ( _Speed_Control (2 , _motor_freq -> -> 1 `i `uc ]
-"155
-[; ;Bipolar_Stepper.c: 155:         }
+"194
+[; ;Bipolar_Stepper.c: 194:             Speed_Control(speedmode);
+[e ( _Speed_Control (1 _speedmode ]
+"195
+[; ;Bipolar_Stepper.c: 195:         }
 }
-[e :U 123 ]
-"156
-[; ;Bipolar_Stepper.c: 156:     }
+[e :U 141 ]
+"196
+[; ;Bipolar_Stepper.c: 196:     }
 }
-[e :U 120 ]
-[e $U 121  ]
-[e :U 122 ]
-"157
-[; ;Bipolar_Stepper.c: 157:     return;
-[e $UE 119  ]
-"158
-[; ;Bipolar_Stepper.c: 158: }
-[e :UE 119 ]
+[e :U 138 ]
+[e $U 139  ]
+[e :U 140 ]
+"197
+[; ;Bipolar_Stepper.c: 197:     return;
+[e $UE 137  ]
+"198
+[; ;Bipolar_Stepper.c: 198: }
+[e :UE 137 ]
 }
 [p f _sprintf 8912896 ]
-[a 5C 83 112 101 101 100 32 51 32 114 117 110 110 105 110 103 0 ]
-[a 4C 83 112 101 101 100 32 50 32 114 117 110 110 105 110 103 0 ]
-[a 3C 83 112 101 101 100 32 49 32 114 117 110 110 105 110 103 0 ]
-[a 1C 69 82 82 79 82 58 32 105 110 118 97 108 105 100 32 102 114 101 113 117 101 110 99 121 33 0 ]
-[a 2C 82 101 99 101 105 118 101 100 58 32 91 37 99 93 13 10 0 ]
+[a 4C 83 121 115 116 101 109 32 105 115 32 114 101 97 100 121 13 10 0 ]
+[a 1C 73 110 118 97 108 105 100 32 99 111 109 109 97 110 100 13 10 0 ]
+[a 2C 67 111 109 112 108 101 116 101 100 13 10 0 ]
+[a 3C 82 101 99 101 105 118 101 100 58 32 37 99 13 10 0 ]
