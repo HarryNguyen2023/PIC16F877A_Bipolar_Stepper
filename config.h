@@ -3,6 +3,9 @@
 #ifndef XC_HEADER_TEMPLATE_H
 #define	XC_HEADER_TEMPLATE_H
 
+
+#endif	/* XC_HEADER_TEMPLATE_H */
+
 // CONFIG
 #pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled)
@@ -15,7 +18,4 @@
 
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
-#include <xc.h> // include processor files - each processor file is guarded.  
-
-#endif	/* XC_HEADER_TEMPLATE_H */
-
+#include <xc.h> // include processor files - each processor file is guarded. 

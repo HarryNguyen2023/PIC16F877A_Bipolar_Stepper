@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "UART.h"
 #include "config.h"
+#include <stdio.h>
 
 // Define maximum and minimum PWM frequency of the motor
 #define PWM_FREQ_MAX 10000
@@ -28,9 +29,9 @@
 
 // Declare global variables
 char rcvStr[17];
-volatile uint8_t direc = 1;
+volatile uint8_t mode = 0;
 volatile uint8_t command;
-volatile uint16_t motor_freq = 0;
+volatile uint16_t motor_freq = 2000;
 
 // Function to configure external and portB interrupt
 void ExtInt_Init(){
@@ -82,12 +83,6 @@ void Speed_Control(uint16_t PWM_FREQ, uint8_t State){
     TMR2ON = 1;
 }
 
-// Function to handle UART command
-void Command_Handling(uint8_t com)
-{
-    
-}
-
 // Interrupt handling service
 void __interrupt() ISR(void)
 {
@@ -117,14 +112,47 @@ void __interrupt() ISR(void)
         // Change direction of the motor
         if(command == Direc)
         {
-            direc = 1 - direc;
-        }else
+            DIR = ~DIR;
+        }
+        else if(command == Speed1)
         {
-            Command_Handling(command);
+            motor_freq = 4000;
+            UART_sendString("Speed 1 running");
+        }
+        else if(command == Speed2)
+        {
+            motor_freq = 6000;
+            UART_sendString("Speed 2 running");
+        }
+        else if(command == Speed3)
+        {
+            motor_freq = 8000;
+            UART_sendString("Speed 3 running");
+        }
+        else
+        {
+            mode = 1;
+            //Command_Handling(command);
         }
     }
 }
 
-void main(void) {
+void main(void) 
+{
+    // System initialization
+    ExtInt_Init();
+    PWM_Init();
+    UART_Init();
+    // Turn on the motor running counterclockwise
+    EN = 1;
+    DIR = 1;
+    // 
+    while(1)
+    {
+        if(mode == 0)
+        {
+            Speed_Control(motor_freq, 1);
+        }
+    }
     return;
 }
