@@ -2,8 +2,10 @@
 #include "UART.h"
 #include "config.h"
 
-// Define maximum PWM frequency of the motor
+// Define maximum and minimum PWM frequency of the motor
 #define PWM_FREQ_MAX 10000
+#define PWM_FREQ_MIN 1500
+
 // Define the step of the motor 
 #define Step 1.8
 
@@ -13,7 +15,7 @@
 #define EN RD1
 
 // Define command to control the position of the stepper motor
-#define Brake 48
+#define Direc 48
 #define Speed1 49
 #define Speed2 50
 #define Speed3 51
@@ -28,6 +30,7 @@
 char rcvStr[17];
 volatile uint8_t direc = 1;
 volatile uint8_t command;
+volatile uint16_t motor_freq = 0;
 
 // Function to configure external and portB interrupt
 void ExtInt_Init(){
@@ -51,7 +54,7 @@ void PWM_Init(void){
 // Function to configure Timer2 
 void Speed_Control(uint16_t PWM_FREQ, uint8_t State){
     uint16_t dutyCycle;
-    if(PWM_FREQ > PWM_FREQ_MAX || PWM_FREQ < 1500)
+    if(PWM_FREQ > PWM_FREQ_MAX || PWM_FREQ < PWM_FREQ_MIN)
     {
         UART_sendString("ERROR: invalid frequency!");
         return;
@@ -79,27 +82,22 @@ void Speed_Control(uint16_t PWM_FREQ, uint8_t State){
     TMR2ON = 1;
 }
 
-// Function to configure the duty cycle of the PWM module
-void DC_Speed(uint16_t dutyCycle){
-    if(dutyCycle <= PWM_RANGE){
-        // Get the 2 LSB-bit
-        CCP1CONbits.CCP1Y = (dutyCycle) & 1;
-        CCP1CONbits.CCP1X = (dutyCycle) & 2;
-        // Move 8 MSB-bit to CCPRL
-        CCPR1L = (dutyCycle) >> 2;
-        // Activate Timer 2
-        TMR2ON = 1;
-    }  
+// Function to handle UART command
+void Command_Handling(uint8_t com)
+{
+    
 }
 
 // Interrupt handling service
-void __interrupt() ISR(void){
-    // External interrupt for controlling direction
+void __interrupt() ISR(void)
+{
+    // External interrupt for braking the motor
     if(INTF){
         // De-bounce of button
         __delay_ms(20);
         if(RB0 == 0){
-            direc = 1 - direc;
+            EN = 0;
+            Speed_Control(PWM_FREQ_MIN, 0);
         }
         while(RB0 == 0);
         // Clear flag bit
@@ -116,7 +114,14 @@ void __interrupt() ISR(void){
         command = RCREG;
         sprintf(rcvStr,"Received: [%c]\r\n",command);
         UART_sendString(rcvStr);
-        
+        // Change direction of the motor
+        if(command == Direc)
+        {
+            direc = 1 - direc;
+        }else
+        {
+            Command_Handling(command);
+        }
     }
 }
 
